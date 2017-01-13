@@ -5,6 +5,7 @@ module.exports = {
   pixel: filledPath(d3.curveStep),
   roundBars: bars(true),
   bars: bars(),
+  meter: meter(),
   bricks: bricks(),
   equalizer: bricks(true),
   line: strokedPath(),
@@ -113,10 +114,43 @@ function bars(round) {
   }
 
 }
+function meter() {
+
+  return function(context, data, options) {
+
+    context.fillStyle = options.waveColor;
+
+    var waveHeight = options.waveBottom - options.waveTop;
+
+    var baseline = options.waveBottom;
+
+    var barX = d3.scaleBand()
+      .paddingInner(0.5)
+      .paddingOuter(0.01)
+      .domain(d3.range(data.length))
+      .rangeRound([options.waveLeft, options.waveRight]);
+
+    var height = d3.scaleLinear()
+      .domain([0, 1])
+      .range([0, waveHeight]);
+
+    var barWidth = barX.bandwidth();
+
+    data.forEach(function(val, i){
+
+      var h = height(val[0]),
+          x = barX(i),
+          y = baseline - height(val[0]);
+
+      context.fillRect(x, y, barWidth, h);
+    });
+  }
+
+}
 
 function bricks(rainbow) {
   return function(context, data, options) {
-
+  
     context.fillStyle = options.waveColor;
 
     var waveHeight = options.waveBottom - options.waveTop;
