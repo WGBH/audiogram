@@ -28,6 +28,7 @@ module.exports = {
     { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Italic.ttf"), style: "italic" },
     { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-BoldItalic.ttf"), weight: "bold", style: "italic" },
     { family: "Burlingame Pro",  file: path.join(__dirname, "fonts", "BurlingamePro Light-AAPB.ttf"), weight: "300" },
-    { family: "Lato Bold",       file: path.join(__dirname, "fonts", "Lato-Bold-Masterpiece.ttf") }
+    { family: "Lato Bold",       file: path.join(__dirname, "fonts", "Lato-Bold-Masterpiece.ttf") },
+    { family: "Trebuchet",       file: path.join(__dirname, "fonts", "Trebuchet MS.ttf") }
   ]
 };
