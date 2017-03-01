@@ -7,6 +7,7 @@ var serverSettings = require("../lib/settings/"),
 
 function validate(req, res, next) {
 
+
   try {
 
     req.body.theme = JSON.parse(req.body.theme);
@@ -16,9 +17,29 @@ function validate(req, res, next) {
     return res.status(500).send("Unknown settings error.");
 
   }
-
-  if (!req.file || !req.file.filename) {
+  
+  if (!req.files['audio'] || !req.files['audio'][0] || !req.files['audio'][0].filename) {
     return res.status(500).send("No valid audio received.");
+  }
+
+  // if audio file is bigger than limit, throw error
+  if (serverSettings.maxAudioUploadSize && 
+      req.files['audio'][0].size > serverSettings.maxAudioUploadSize)
+  {
+    return res.status(500).send(
+      "The original audio file cannot be bigger than " +
+      serverSettings.maxAudioUploadSize / 1000000 + " MB.");
+  }
+
+  // if image file is bigger than limit, throw error
+  if (serverSettings.maxImageUploadSize &&
+      req.files['image'] &&
+      req.files['image'][0] &&
+      req.files['image'][0].size > serverSettings.maxImageUploadSize)
+  {
+    return res.status(500).send(
+      "The background image file cannot be bigger than " +
+      serverSettings.maxImageUploadSize / 1000000 + " MB.");
   }
 
   // Start at the beginning, or specified time
@@ -36,9 +57,17 @@ function validate(req, res, next) {
 
 function route(req, res) {
 
-  var id = req.file.destination.split(path.sep).pop();
+  var id = req.files['audio'][0].destination.split(path.sep).pop();
 
-  transports.uploadAudio(path.join(req.file.destination, "audio"), "audio/" + id,function(err) {
+  if (req.files['image'] && req.files['image'][0] && req.files['image'][0].filename) {
+    transports.upload(req.files['image'][0].path, "image/" + id , function(err) {
+      if (err) {
+        throw err;
+      }
+    });
+  }
+
+  transports.uploadAudio(req.files['audio'][0].path, "audio/" + id, function(err) {
 
     if (err) {
       throw err;

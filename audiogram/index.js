@@ -22,6 +22,7 @@ function Audiogram(id) {
   this.dir = path.join(serverSettings.workingDirectory, this.id);
 
   this.audioPath = path.join(this.dir, "audio");
+  this.imagePath = path.join(serverSettings.storagePath, "image", this.id);
   this.videoPath = path.join(this.dir, "video.mp4");
   this.frameDir = path.join(this.dir, "frames");
 
@@ -101,7 +102,7 @@ Audiogram.prototype.drawFrames = function(cb) {
 
   this.status("renderer");
 
-  initializeCanvas(this.settings.theme, function(err, renderer){
+  initializeCanvas(this.settings.theme, this.imagePath, function(err, renderer){
 
     if (err) {
       return cb(err);

@@ -4,17 +4,24 @@ var d3 = require("d3"),
     minimap = require("./minimap.js"),
     sampleWave = require("./sample-wave.js"),
     getRenderer = require("../renderer/"),
+    dataURItoBlob = require("datauritoblob"),    
     getWaveform = require("./waveform.js");
 
 var context = d3.select("canvas").node().getContext("2d");
 
 var theme,
     caption,
-    file,
-    selection;
+    audioFile,
+    imageFile,
+    selection,
+    backgroundImageFileOverride;
 
-function _file(_) {
-  return arguments.length ? (file = _) : file;
+function _audioFile(_) {
+  return arguments.length ? (audioFile = _) : audioFile;
+}
+
+function _imageFile(_) {
+  return arguments.length ? (imageFile = _) : imageFile;
 }
 
 function _theme(_) {
@@ -76,7 +83,7 @@ function redraw() {
 
   var renderer = getRenderer(theme);
 
-  renderer.backgroundImage(theme.backgroundImageFile || null);
+  renderer.backgroundImage(backgroundImageFileOverride || theme.backgroundImageFile || null);
 
   renderer.drawFrame(context, {
     caption: caption,
@@ -97,19 +104,42 @@ function loadAudio(f, cb) {
         return cb(err);
       }
 
-      file = f;
+      audioFile = f;
       minimap.redraw(data.peaks);
 
       cb(err);
 
     });
+}
 
+function loadImage(f, cb) {
+  imageFile = f;
+  setBackgroundImageOverride(f)
+}
+
+function setBackgroundImageOverride(customImage) {
+  // if custom image field is empty, clear the override field
+  if (!customImage) {
+    backgroundImageFileOverride = undefined
+    redraw()
+    return;
+  }
+  backgroundImageFileOverride = new Image();
+  backgroundImageFileOverride.src = URL.createObjectURL(customImage); 
+  backgroundImageFileOverride.onload = function(){
+    redraw()
+  };
+  backgroundImageFileOverride.onerror = function(e){
+    console.warn(e);
+  };
 }
 
 module.exports = {
   caption: _caption,
   theme: _theme,
-  file: _file,
+  audioFile: _audioFile,
+  imageFile: _imageFile,
   selection: _selection,
-  loadAudio: loadAudio
+  loadAudio: loadAudio,
+  loadImage: loadImage
 };

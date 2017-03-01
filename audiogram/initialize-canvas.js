@@ -3,17 +3,23 @@ var fs = require("fs"),
     Canvas = require("canvas"),
     getRenderer = require("../renderer/");
 
-function initializeCanvas(theme, cb) {
+function initializeCanvas(theme, expectedOverridePath, cb) {
 
   // Fonts pre-registered in bin/worker
   var renderer = getRenderer(theme);
 
-  if (!theme.backgroundImage) {
+  // Check if a background image exists at the expected override path
+  if (expectedOverridePath && fs.existsSync(expectedOverridePath)) {
+    backgroundToUse = expectedOverridePath
+  } else if (theme.backgroundImage) {
+    backgroundToUse = path.join(__dirname, "..", "settings", "backgrounds", theme.backgroundImage)
+  } else {
     return cb(null, renderer);
   }
 
+
   // Load background image from file (done separately so renderer code can work in browser too)
-  fs.readFile(path.join(__dirname, "..", "settings", "backgrounds", theme.backgroundImage), function(err, raw){
+  fs.readFile(backgroundToUse, function(err, raw){
 
     if (err) {
       return cb(err);

@@ -2,7 +2,10 @@ var d3 = require("d3"),
     $ = require("jquery"),
     preview = require("./preview.js"),
     video = require("./video.js"),
-    audio = require("./audio.js");
+    audio = require("./audio.js"),
+    settings = require("../settings/index.js"),
+    dataURItoBlob = require("datauritoblob"),
+    _ga = require("./ga.js");
 
 d3.json("/settings/themes.json", function(err, themes){
 
@@ -42,15 +45,26 @@ function submitted() {
   var theme = preview.theme(),
       caption = preview.caption(),
       selection = preview.selection(),
-      file = preview.file();
+      audioFile = preview.audioFile(),
+      imageFile = preview.imageFile();
 
-  if (!file) {
+  if (!audioFile) {
     d3.select("#row-audio").classed("error", true);
     return setClass("error", "No audio file selected.");
   }
 
   if (theme.maxDuration && selection.duration > theme.maxDuration) {
     return setClass("error", "Your Audiogram must be under " + theme.maxDuration + " seconds.");
+  }
+
+  if (settings.maxAudioUploadSize && audioFile.size > settings.maxAudioUploadSize) {
+    d3.select("#row-audio").classed("error", true);
+    return setClass("error", "Audio file cannnot be bigger than " + settings.maxAudioUploadSize / 1000000 + " MB.");
+  }
+
+  if (imageFile && settings.maxImageUploadSize && imageFile.size > settings.maxImageUploadSize) {
+    d3.select("#row-image").classed("error", true);
+    return setClass("error", "Image file cannnot be bigger than " + settings.maxImageUploadSize / 1000000 + " MB.");
   }
 
   if (!theme || !theme.width || !theme.height) {
@@ -62,7 +76,7 @@ function submitted() {
 
   var formData = new FormData();
 
-  formData.append("audio", file);
+  formData.append("audio", audioFile);
   if (selection.start || selection.end) {
     formData.append("start", selection.start);
     formData.append("end", selection.end);
@@ -70,24 +84,26 @@ function submitted() {
   formData.append("theme", JSON.stringify($.extend({}, theme, { backgroundImageFile: null })));
   formData.append("caption", caption);
 
+  if (imageFile) {
+    formData.append("image", imageFile);
+  }
+
   setClass("loading");
   d3.select("#loading-message").text("Uploading audio...");
 
-	$.ajax({
-		url: "/submit/",
-		type: "POST",
-		data: formData,
-		contentType: false,
+  $.ajax({
+    url: "/submit/",
+    type: "POST",
+    data: formData,
+    contentType: false,
     dataType: "json",
-		cache: false,
-		processData: false,
-		success: function(data){
+    cache: false,
+    processData: false,
+    success: function(data){
       poll(data.id, 0);
-		},
+    },
     error: error
-
   });
-
 }
 
 function poll(id) {
@@ -174,6 +190,8 @@ function initialize(err, themesWithImages) {
   // If there's an initial piece of audio (e.g. back button) load it
   d3.select("#input-audio").on("change", updateAudioFile).each(updateAudioFile);
 
+  d3.select("#input-image").on("change", updateImageFile);
+
   d3.select("#return").on("click", function(){
     d3.event.preventDefault();
     video.kill();
@@ -194,7 +212,7 @@ function updateAudioFile() {
   // Skip if empty
   if (!this.files || !this.files[0]) {
     d3.select("#minimap").classed("hidden", true);
-    preview.file(null);
+    preview.audioFile(null);
     setClass(null);
     return true;
   }
@@ -218,8 +236,64 @@ function updateAudioFile() {
 
 }
 
+function updateImageFile() {
+
+  imageData = this.files[0];
+  preview.loadImage(imageData, function(err){
+    if (err) {
+      d3.select("#row-image").classed("error", true);
+      setClass("error", "Error decoding image file");
+    } else {
+      setClass(null);
+    }
+  });
+}
+  
+//   var dataURL = $(image).toDataURL('image/jpeg');
+//   
+//   console.log(dataURL);
+//   
+//   var imageData = dataURItoBlob(dataURL);
+//   
+//   console.log(imageData);
+  
+//   updatePreview(image, imageType); 
+  
+//   var cropBoxData;
+//   var canvasData;
+//   $(image).cropper({
+//       autoCropArea: 0.5,
+//       aspectRatio: 16/9,
+//       ready: function () {
+//         //$(this).cropper('setCropBoxData').setCanvasData(canvasData);
+//       }
+//     });
+//   $('#cropperModal').show();
+//   $('#cropperOK').off('click');
+//   $('#cropperOK').on('click', function () {
+//     var dataURL = $(image).cropper('getCroppedCanvas').toDataURL('image/jpeg');
+//     var imageData = dataURItoBlob(dataURL);
+//     $('#cropperModal').hide();
+//     $(image).cropper('destroy');
+//     updateImageFile(imageData);
+//   });
+// }
+
+// function updatePreview(image, imageType) {
+//     var imageData = dataURItoBlob(dataURL);
+//     d3.select("#row-image").classed("error", false);
+//     preview.loadImage(imageData, function(err){
+//     if (err) {
+//       d3.select("#row-image").classed("error", true);
+//       setClass("error", "Error decoding image file");
+//     } else {
+//       setClass(null);
+//     }
+//   });
+// }
+
 function updateCaption() {
-  preview.caption(this.value);
+  preview.caption($('#input-caption').val());
 }
 
 function updateTheme() {
@@ -263,7 +337,6 @@ function preloadImages(themes) {
     theme.backgroundImageFile.src = "/settings/backgrounds/" + theme.backgroundImage;
 
   }
-
 }
 
 function setClass(cl, msg) {
@@ -299,5 +372,5 @@ function statusMessage(result) {
     default:
       return JSON.stringify(result);
   }
-
 }
+

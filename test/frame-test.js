@@ -23,7 +23,7 @@ function tester(options) {
 
   return function(test) {
 
-    initializeCanvas(options, function(err, renderer){
+    initializeCanvas(options, null, function(err, renderer){
 
       test.error(err);
 
