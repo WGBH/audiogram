@@ -4,8 +4,7 @@ var d3 = require("d3"),
     video = require("./video.js"),
     audio = require("./audio.js"),
     settings = require("../settings/index.js"),
-    dataURItoBlob = require("datauritoblob"),
-    _ga = require("./ga.js");
+    dataURItoBlob = require("datauritoblob");
 
 d3.json("/settings/themes.json", function(err, themes){
 
