@@ -15,6 +15,25 @@
     "captionLeft": 200,
     "captionRight": 1080
   },
+  "American Archive": {
+    "width": 1280,
+    "height": 720,
+    "captionFont": "36px 'Burlingame Pro'",
+    "captionColor": "#3c439b",
+    "captionTop": 600,
+    "captionLeft": 725,
+    "captionRight": 1240,
+    "captionAlign": "right",
+    "captionLineHeight": 45,
+    "backgroundImage": "american-archive-flamingo-1280x720.gif",
+    "pattern": "meter",
+    "samplesPerFrame": 15,
+    "waveColor": "#ffffff",
+    "waveLeft": 810,
+    "waveRight": 1180,
+    "waveTop": 380,
+    "waveBottom": 480
+  },
   "Antiques Roadshow (light)": {
     "width": 1280,
     "height": 720,
@@ -49,73 +68,31 @@
     "captionLineHeight": 60,
     "backgroundImage": "Antiques-darkblue.gif"
   },
-  "WGBH News (Facebook)": {
-    "width": 1280,
-    "height": 720,
-    "pattern": "bricks",
-    "backgroundColor": "#0a2749",
-    "foregroundColor": "#118824",
-    "waveBottom": 475,
-    "waveTop": 250,
-    "captionTop": 20,
+  "Innovation Hub": {
+    "pattern": "roundBars",
+    "foregroundColor": "#ff0e00",
+    "backgroundColor": "#333",
+    "backgroundImage": "ihub-audiogram-bg-3.jpg",
+    "captionColor": "#fff",
+    "captionAlign": "left",
+    "captionLeft": 90,
+    "captionTop": 70,
+    "waveTop": 220
+  },
+ "Jazz 24/7": {
+      "width": 1024,
+      "height": 300,
+    "foregroundColor": "#83b9d1",
+    "backgroundColor": "#333",
+      "backgroundImage": "jazz-24-7.jpg",
+      "captionFont": "28px Helvetica",
+    "captionColor": "#eeeeee",
+    "captionAlign": "left",
     "captionLeft": 20,
-    "captionAlign": "left",
-    "captionColor": "#0a2749",
-    "captionFont": "600 36px 'Source Sans Pro'",
-    "captionLineHeight": 40,
-    "backgroundImage": "wgbh-news-ag-bg.jpg"
-  },
-  "WGBH News (Instagram)": {
-    "width": 640,
-    "height": 640,
-    "pattern": "bricks",
-    "backgroundColor": "#0a2749",
-    "foregroundColor": "#118824",
-    "waveBottom": 422,
-    "waveTop": 222,
-    "captionTop": 20,
-    "captionLeft": 20,
-    "captionAlign": "left",
-    "captionColor": "#0a2749",
-    "captionFont": "600 36px 'Source Sans Pro'",
-    "captionLineHeight": 40,
-    "backgroundImage": "wgbh-news-ag-bg-640x640.jpg"
-  },
-  "WCRB (Billy Joel)": {
-    "width": 1280,
-    "height": 720,
-    "pattern": "wave",
-    "backgroundColor": "#0a2749",
-    "foregroundColor": "#eedd55",
-    "waveBottom": 475,
-    "waveTop": 250,
-    "waveRight": 900,
-    "captionTop": 80,
-    "captionLeft": 40,
-    "captionAlign": "left",
-    "captionColor": "#000000",
-    "captionFont": "300 36px 'Source Sans Pro'",
-    "captionLineHeight": 60,
-    "backgroundImage": "audiogram-wcrb-joel.gif"
-  },
-  "American Archive": {
-    "width": 1280,
-    "height": 720,
-    "captionFont": "36px 'Burlingame Pro'",
-    "captionColor": "#3c439b",
-    "captionTop": 600,
-    "captionLeft": 725,
-    "captionRight": 1240,
-    "captionAlign": "right",
-    "captionLineHeight": 45,
-    "backgroundImage": "american-archive-flamingo-1280x720.gif",
-    "pattern": "meter",
-    "samplesPerFrame": 15,
-    "waveColor": "#ffffff",
-    "waveLeft": 810,
-    "waveRight": 1180,
-    "waveTop": 380,
-    "waveBottom": 480
+      "captionTop": 20,
+      "pattern": "bricks",
+      "waveTop": 200,
+      "waveBottom":290
   },
   "Masterpiece (Facebook)": {
     "width": 1280,
@@ -155,36 +132,6 @@
     "waveLeft": 505,
     "waveRight": 615
   },
-  "Basic": {
-    "backgroundColor": "#eee",
-    "foregroundColor": "#de1e3d"
-  },
- "Jazz 24/7": {
-      "width": 1024,
-      "height": 300,
-    "foregroundColor": "#83b9d1",
-    "backgroundColor": "#333",
-      "backgroundImage": "jazz-24-7.jpg",
-      "captionFont": "28px Helvetica",
-    "captionColor": "#eeeeee",
-    "captionAlign": "left",
-    "captionLeft": 20,
-      "captionTop": 20,
-      "pattern": "bricks",
-      "waveTop": 200,
-      "waveBottom":290
-  },
-  "Innovation Hub": {
-    "pattern": "roundBars",
-    "foregroundColor": "#ff0e00",
-    "backgroundColor": "#333",
-    "backgroundImage": "ihub-audiogram-bg-3.jpg",
-    "captionColor": "#fff",
-    "captionAlign": "left",
-    "captionLeft": 90,
-    "captionTop": 70,
-    "waveTop": 220
-  },
   "Midsomer Murders": {
     "pattern": "roundBars",
     "foregroundColor": "#bbf2f8",
@@ -195,88 +142,37 @@
     "captionTop": 440,
     "captionRight": 1210,
     "waveTop": 100
-  },  
-  "Neon": {
-    "backgroundColor": "#556270",
-    "foregroundColor": "#c7f464"
-  },
-  "Three colors": {
-    "backgroundColor": "#eee",
-    "captionColor": "#515151",
-    "waveColor": "#00b4ff"
-  },
-  "Background image with top right text": {
-    "captionAlign": "right",
-    "captionTop": 60,
-    "captionRight": 1220,
-    "captionLeft": 640,
-    "backgroundImage": "subway.jpg",
-    "foregroundColor": "#fc0",
-    "waveBottom": 660,
-    "waveTop": 320
-  },
-  "Bars": {
-    "pattern": "bars",
-    "foregroundColor": "#d84a4a"
-  },
-  "Rounded bars with bottom left text": {
-    "pattern": "roundBars",
-    "foregroundColor": "#d84a4a",
+  }  
+  "WGBH News (Facebook)": {
+    "width": 1280,
+    "height": 720,
+    "pattern": "bricks",
+    "backgroundColor": "#0a2749",
+    "foregroundColor": "#118824",
+    "waveBottom": 475,
+    "waveTop": 250,
+    "captionTop": 20,
+    "captionLeft": 20,
     "captionAlign": "left",
-    "captionLeft": 60,
-    "captionRight": 640,
-    "captionBottom": 660,
-    "captionTop": null
+    "captionColor": "#0a2749",
+    "captionFont": "600 36px 'Source Sans Pro'",
+    "captionLineHeight": 40,
+    "backgroundImage": "wgbh-news-ag-bg.jpg"
   },
-  "Line": {
-    "backgroundColor": "#edc951",
-    "foregroundColor": "#00a0b0",
-    "pattern": "line"
-  },
-  "Curve": {
-    "backgroundColor": "#00a0b0",
-    "foregroundColor": "#edc951",
-    "pattern": "curve"
-  },
-  "Bricks": {
-    "backgroundColor": "#8771aa",
-    "foregroundColor": "#fff",
-    "pattern": "bricks"
-  },
-  "Equalizer on the bottom": {
-    "backgroundColor": "#222",
-    "foregroundColor": "#fff",
-    "pattern": "equalizer",
-    "captionTop": 40,
-    "captionBottom": 380,
-    "waveTop": 420,
-    "waveBottom": 720
-  },
-  "Bold italic orange": {
-    "captionAlign": "right",
-    "captionTop": null,
-    "captionBottom": 660,
-    "captionRight": 1220,
-    "captionLeft": 640,
-    "backgroundColor": "#fd5a1e",
-    "waveColor": "#fff",
-    "captionFont": "bold italic 52px 'Source Sans Pro'"
-  },
-  "Pixelated": {
-    "backgroundColor": "#ecd078",
-    "foregroundColor": "#c02942",
-    "pattern": "pixel"
-  },
-  "Square with background image": {
+  "WGBH News (Instagram)": {
     "width": 640,
     "height": 640,
-    "samplesPerFrame": 64,
-    "waveTop": 20,
-    "waveBottom": 300,
-    "captionTop": 340,
+    "pattern": "bricks",
+    "backgroundColor": "#0a2749",
+    "foregroundColor": "#118824",
+    "waveBottom": 422,
+    "waveTop": 222,
+    "captionTop": 20,
     "captionLeft": 20,
-    "captionRight": 620,
-    "foregroundColor": "#0eb8ba",
-    "backgroundImage": "nyc.png"
+    "captionAlign": "left",
+    "captionColor": "#0a2749",
+    "captionFont": "600 36px 'Source Sans Pro'",
+    "captionLineHeight": 40,
+    "backgroundImage": "wgbh-news-ag-bg-640x640.jpg"
   }
 }

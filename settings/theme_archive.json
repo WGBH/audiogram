@@ -1,0 +1,17 @@
+  "WCRB (Billy Joel)": {
+    "width": 1280,
+    "height": 720,
+    "pattern": "wave",
+    "backgroundColor": "#0a2749",
+    "foregroundColor": "#eedd55",
+    "waveBottom": 475,
+    "waveTop": 250,
+    "waveRight": 900,
+    "captionTop": 80,
+    "captionLeft": 40,
+    "captionAlign": "left",
+    "captionColor": "#000000",
+    "captionFont": "300 36px 'Source Sans Pro'",
+    "captionLineHeight": 60,
+    "backgroundImage": "audiogram-wcrb-joel.gif"
+  }
