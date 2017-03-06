@@ -76,11 +76,11 @@ if (serverSettings.fonts) {
 app.get("/status/:id/", status);
 
 
-// Serve background images and themes JSON statically
+// Serve background images, logos, and themes JSON statically
 app.use("/settings/", function(req, res, next) {
 
   // Limit to themes.json and bg images
-  if (req.url.match(/^\/?themes.json$/i) || req.url.match(/^\/?backgrounds\/[^/]+$/i)) {
+  if (req.url.match(/^\/?themes.json$/i) || req.url.match(/^\/?backgrounds\/[^/]+$/i) || req.url.match(/^\/?logos\/[^/]+$/i)) {
     return next();
   }
 

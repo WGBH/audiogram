@@ -15,6 +15,19 @@
     "captionLeft": 200,
     "captionRight": 1080
   },
+  "The World (logo test)": {
+    "pattern": "meter",
+    "samplesPerFrame": 100,
+    "backgroundColor": "#ffffff",
+    "waveColor": "#00a0de",
+    "waveLeft": 300,
+    "waveRight": 1250,
+    "waveTop": 570,
+    "waveBottom": 670,
+    "logo": "the-world-blue-square.png",
+    "logoTop": 460,
+    "logoLeft": 45
+  },
   "Antiques Roadshow (light)": {
     "width": 1280,
     "height": 720,

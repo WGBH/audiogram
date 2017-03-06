@@ -2,6 +2,9 @@
   "name": "audiogram",
   "version": "0.9.5",
   "description": "Turn audio into a shareable video.",
+  "engines": {
+    "node": "7.7.1"
+  },
   "main": "index.js",
   "scripts": {
     "start": "npm run postinstall && bin/server",
@@ -28,8 +31,10 @@
     "canvas": "git+https://github.com/chearon/node-canvas.git#12971f64a66b",
     "compression": "^1.6.1",
     "d3": "^4.1.1",
+    "datauritoblob": "^1.0.0",
     "dotenv": "^2.0.0",
     "express": "^4.13.3",
+    "imagemagick-composite": "^0.1.2",
     "jquery": "^2.2.1",
     "mkdirp": "^0.5.1",
     "morgan": "^1.7.0",
