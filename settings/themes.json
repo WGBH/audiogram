@@ -142,7 +142,24 @@
     "captionTop": 440,
     "captionRight": 1210,
     "waveTop": 100
-  }  
+  },  
+  "The World (black)": {
+    "width": 1280,
+    "height": 700,
+    "pattern": "wave",
+    "backgroundColor": "#000000",
+    "foregroundColor": "#00a0de",
+    "waveBottom": 600,
+    "waveTop": 400,
+    "waveLeft": 270,
+    "captionTop": 200,
+    "captionLeft": 400,
+    "captionAlign": "left",
+    "captionColor": "#ffffff",
+    "captionFont": "48px 'Tex Gyre Schola'",
+    "captionLineHeight": 40,
+    "backgroundImage": "the-world-black-1280x700.gif"
+  },
   "WGBH News (Facebook)": {
     "width": 1280,
     "height": 720,
