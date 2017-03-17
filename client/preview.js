@@ -75,6 +75,27 @@ function resize(width, height) {
 
 }
 
+// Modify the preview wave to match the theme samples per frame
+function selectPreviewPoints(samplePoints) {
+  
+  //Compress waveform to theme width and pick points at sample rate
+  var previewWave = [];
+
+  var sampleDelta = parseInt(samplePoints.length/theme.samplesPerFrame);
+  
+  console.log("Delta: " + sampleDelta);
+
+  for (var i=0; i < samplePoints.length; i++) {
+    if (i%sampleDelta == 0) {
+      console.log(i);
+      console.log(samplePoints[i]);
+      var point = [ samplePoints[i][0], samplePoints[i][1] ];
+      previewWave.push(point);
+    }
+  }
+  return previewWave;
+}
+
 function redraw() {
 
   resize(theme.width, theme.height);
@@ -84,10 +105,18 @@ function redraw() {
   var renderer = getRenderer(theme);
 
   renderer.backgroundImage(backgroundImageFileOverride || theme.backgroundImageFile || null);
+  
+  var samplePoints = sampleWave;
+  
+  console.log(samplePoints);
 
+  previewWave = selectPreviewPoints(samplePoints);
+
+  console.log(previewWave);
+  
   renderer.drawFrame(context, {
     caption: caption,
-    waveform: sampleWave,
+    waveform: previewWave,      // sampleWave,
     frame: 0
   });
 

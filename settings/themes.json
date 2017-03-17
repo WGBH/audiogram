@@ -191,5 +191,86 @@
     "captionFont": "600 36px 'Source Sans Pro'",
     "captionLineHeight": 40,
     "backgroundImage": "wgbh-news-ag-bg-640x640.jpg"
+  },
+  "Waveform Demo (wave)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "wave",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (curve)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "curve",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (easy curve)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "curve",
+    "waveTop": 260,
+    "waveBottom": 460,
+    "samplesPerFrame": 10
+  },
+  "Waveform Demo (line)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "line",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (bars)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "bars",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (roundBars)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "roundBars",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (pixel)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "pixel",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (meter)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "meter",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (short meter)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "meter",
+    "waveTop": 260,
+    "waveBottom": 460,
+    "waveLeft": 640,
+    "waveRight": 800,
+    "samplesPerFrame": 15
+  },
+  "Waveform Demo (bricks)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "bricks",
+    "waveTop": 260,
+    "waveBottom": 460
+  },
+  "Waveform Demo (equalizer)": {
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ff69b4",
+    "pattern": "equalizer",
+    "waveTop": 260,
+    "waveBottom": 460
   }
 }
