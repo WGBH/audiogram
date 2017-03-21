@@ -151,13 +151,13 @@
     "foregroundColor": "#00a0de",
     "waveBottom": 600,
     "waveTop": 400,
-    "waveLeft": 270,
+    "waveLeft": 355,
     "captionTop": 200,
     "captionLeft": 400,
     "captionAlign": "left",
     "captionColor": "#ffffff",
-    "captionFont": "48px 'Tex Gyre Schola'",
-    "captionLineHeight": 40,
+    "captionFont": "44px 'Tex Gyre Schola'",
+    "captionLineHeight": 55,
     "backgroundImage": "the-world-black-1280x700.gif"
   },
   "WGBH News (Facebook)": {
