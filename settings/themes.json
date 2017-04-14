@@ -68,6 +68,42 @@
     "captionLineHeight": 60,
     "backgroundImage": "Antiques-darkblue.gif"
   },
+  "Groundtruth Project (Instagram)": {
+    "width": 1280,
+    "height": 720,
+    "captionFont": "33px 'Copse Regular'",
+    "captionColor": "#ffffff",
+    "captionAlign": "left",
+    "captionTop": 600,
+    "captionLeft": 80,
+    "captionLineHeight": 30,
+    "backgroundImage": "groundtruth-generic-1280x720.gif",
+    "pattern": "curve",
+    "samplesPerFrame": 70,
+    "waveColor": "#0d8542",
+    "waveLeft": 80,
+    "waveRight": 1200,
+    "waveTop": 415,
+    "waveBottom": 627
+  },
+  "Groundtruth Project (Twitter)": {
+    "width": 640,
+    "height": 640,
+    "captionFont": "27px 'Copse Regular'",
+    "captionColor": "#ffffff",
+    "captionAlign": "left",
+    "captionTop": 552,
+    "captionLeft": 48,
+    "captionLineHeight": 22,
+    "backgroundImage": "groundtruth-generic-640x640.gif",
+    "pattern": "curve",
+    "samplesPerFrame": 70,
+    "waveColor": "#0d8542",
+    "waveLeft": -5,
+    "waveRight": 645,
+    "waveTop": 340,
+    "waveBottom": 495
+  },
   "Innovation Hub": {
     "pattern": "roundBars",
     "foregroundColor": "#ff0e00",
@@ -80,19 +116,19 @@
     "waveTop": 220
   },
  "Jazz 24/7": {
-      "width": 1024,
-      "height": 300,
+    "width": 1024,
+    "height": 300,
     "foregroundColor": "#83b9d1",
     "backgroundColor": "#333",
-      "backgroundImage": "jazz-24-7.jpg",
-      "captionFont": "28px Helvetica",
+    "backgroundImage": "jazz-24-7.jpg",
+    "captionFont": "28px Helvetica",
     "captionColor": "#eeeeee",
     "captionAlign": "left",
     "captionLeft": 20,
-      "captionTop": 20,
-      "pattern": "bricks",
-      "waveTop": 200,
-      "waveBottom":290
+    "captionTop": 20,
+    "pattern": "bricks",
+    "waveTop": 200,
+    "waveBottom":290
   },
   "Masterpiece (Facebook)": {
     "width": 1280,
@@ -142,7 +178,7 @@
     "captionTop": 440,
     "captionRight": 1210,
     "waveTop": 100
-  },  
+  },
   "The World (black)": {
     "width": 1280,
     "height": 700,
