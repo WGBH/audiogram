@@ -24,6 +24,7 @@ module.exports = {
   redisHost: '127.0.0.1',
   worker: true,
   fonts: [
+    { family: "Copse Regular", file: path.join(__dirname, "fonts", "Copse-Regular.ttf") },      
     { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Regular.ttf") },
     { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Light.ttf"), weight: 300 },
     { family: "Source Sans Pro", file: path.join(__dirname, "fonts", "SourceSansPro-Bold.ttf"), weight: "bold" },
