@@ -20,7 +20,8 @@ var path = require("path");
 
 module.exports = {
   workingDirectory: path.join(__dirname, "..", "tmp"),
-  s3Bucket: 'wgbh-audiograms',
+  storagePath: 'media',
+//   s3Bucket: 'wgbh-audiograms',
   redisHost: '127.0.0.1',
   worker: true,
   fonts: [
