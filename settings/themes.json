@@ -77,7 +77,7 @@
     "captionTop": 552,
     "captionLeft": 48,
     "captionRight": 592,
-    "captionLineHeight": 22,
+    "captionLineHeight": 30,
     "backgroundImage": "groundtruth-generic-640x640.gif",
     "pattern": "curve",
     "samplesPerFrame": 70,
