@@ -69,6 +69,25 @@
     "backgroundImage": "Antiques-darkblue.gif"
   },
   "Groundtruth Project (Instagram)": {
+    "width": 640,
+    "height": 640,
+    "captionFont": "27px 'Copse Regular'",
+    "captionColor": "#ffffff",
+    "captionAlign": "left",
+    "captionTop": 552,
+    "captionLeft": 48,
+    "captionRight": 592,
+    "captionLineHeight": 30,
+    "backgroundImage": "groundtruth-generic-640x640.gif",
+    "pattern": "curve",
+    "samplesPerFrame": 70,
+    "waveColor": "#0d8542",
+    "waveLeft": -5,
+    "waveRight": 645,
+    "waveTop": 340,
+    "waveBottom": 495
+  },
+  "Groundtruth Project (Twitter)": {
     "width": 1280,
     "height": 720,
     "captionFont": "33px 'Copse Regular'",
@@ -76,6 +95,7 @@
     "captionAlign": "left",
     "captionTop": 600,
     "captionLeft": 80,
+    "captionRight": 875,
     "captionLineHeight": 30,
     "backgroundImage": "groundtruth-generic-1280x720.gif",
     "pattern": "curve",
@@ -85,24 +105,6 @@
     "waveRight": 1200,
     "waveTop": 415,
     "waveBottom": 627
-  },
-  "Groundtruth Project (Twitter)": {
-    "width": 640,
-    "height": 640,
-    "captionFont": "27px 'Copse Regular'",
-    "captionColor": "#ffffff",
-    "captionAlign": "left",
-    "captionTop": 552,
-    "captionLeft": 48,
-    "captionLineHeight": 22,
-    "backgroundImage": "groundtruth-generic-640x640.gif",
-    "pattern": "curve",
-    "samplesPerFrame": 70,
-    "waveColor": "#0d8542",
-    "waveLeft": -5,
-    "waveRight": 645,
-    "waveTop": 340,
-    "waveBottom": 495
   },
   "Innovation Hub": {
     "pattern": "roundBars",
